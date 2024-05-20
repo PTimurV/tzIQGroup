@@ -14,7 +14,7 @@ $sum = $amount;
 if ($replenish == '1') {
     for ($i = 0; $i < $term; $i++) {
         for($j = 0; $j < 12; $j++){
-            for ($i = 0; $i < 12; $i++) {
+            for ($z = 0; $z < 12; $z++) {
             $daysInMonth = cal_days_in_month(CAL_GREGORIAN, date('n', strtotime($date)), date('Y', strtotime($date)));
             $sum += ($sum+$replenishAmount) * $daysInMonth * ($percent / 100 / $daysInYear);
             $date = date('Y-m-d', strtotime($date . ' +1 month'));
@@ -23,7 +23,7 @@ if ($replenish == '1') {
     }
 } else {
     for ($i = 1; $i <= $term; $i++) {
-        for ($i = 0; $i < 12; $i++) {
+        for ($j = 0; $j < 12; $j++) {
             $daysInMonth = cal_days_in_month(CAL_GREGORIAN, date('n', strtotime($date)), date('Y', strtotime($date)));
             $sum += $sum * $daysInMonth * ($percent / 100 / $daysInYear);
             $date = date('Y-m-d', strtotime($date . ' +1 month'));
